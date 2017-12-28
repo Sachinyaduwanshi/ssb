@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 //import {MenuItem} from "primeng/primeng";
 //import {Menu} from "primeng/components/menu/menu";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Router} from '@angular/router';
 
 declare var jQuery :any;
 

@@ -1,4 +1,13 @@
-<div>
-        <h1>Media & Library</h1>
-        <hr/>
+<div  class="col-sm-12 kill-padding table">
+        <h1>Audio, Video and Literature collection</h1>
+   <!--<p-datatable [value]="allMediaLibrary" class="ui-g-12">
+           <p-column field="type" header="Type"></p-column>
+           <p-column field="category" header="Category"></p-column>
+           <p-column field="name" header="Name"></p-column>
+           <p-column field="url" header="URL"></p-column>
+   </p-datatable>-->
+
+   <p-dataTable [value]="allMediaLibrary" class="ui-g-12">
+        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+   </p-dataTable>
 </div>

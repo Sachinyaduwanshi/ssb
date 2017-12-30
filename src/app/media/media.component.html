@@ -1,13 +1,40 @@
 <div  class="col-sm-12 kill-padding table">
-        <h1>Audio, Video and Literature collection</h1>
+        <p-header>Audio, Video and Literature collection</p-header>
    <!--<p-datatable [value]="allMediaLibrary" class="ui-g-12">
            <p-column field="type" header="Type"></p-column>
            <p-column field="category" header="Category"></p-column>
            <p-column field="name" header="Name"></p-column>
            <p-column field="url" header="URL"></p-column>
    </p-datatable>-->
-
-   <p-dataTable [value]="allMediaLibrary" class="ui-g-12">
-        <p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header"></p-column>
+   <!--<p-dataGrid [value]="allMediaLibrary" [paginator]="true" [rows]="4">
+        <ng-template let-media pTemplate="item">
+                <p-panel header="{{media.type}} {{media.category}} {{media.name}} {{media.url}}" class="ui-g-12 ui-md-3">
+                        <a href="media.url">Type</a>
+                </p-panel>
+        </ng-template>
+   </p-dataGrid>-->
+   <p-dataTable [value]="allMediaLibrary" class="ui-datagrid, ui-g-12" columnResizeMode="fit" [resizableColumns]="true" emptyMessage="Sorry, no media content found!" [scrollable]="true" scrollHeight="450px">
+        <!--<p-column *ngFor="let col of cols" [field]="col.field" [header]="col.header" [sortable] ="true" [filter]="true" filterMatchMode="contains">
+                <ng-template let-item="rowData" pTemplate="item">
+                        <a href="item[column.name]">item[column.name]</a>					
+                </ng-template> 
+        </p-column>-->
+        <p-column field='type' header='Type' [sortable] ="true" [filter]="true">
+                <ng-template let-row="rowData" pTemplate type="body">                        
+                        <img  *ngIf="row.type === 'video'" src="assets/images/video.png" alt="video"/>
+                        <img  *ngIf="row.type === 'audio'" src="assets/images/audio.jpg" alt="audio"/>
+                        <img  *ngIf="row.type === 'pdf'" src="assets/images/pdf.jpg" alt="pdf"/>
+                </ng-template> 
+        </p-column>
+        <p-column field="category" header="Category" [sortable] ="true" [filter]="true"></p-column>        
+        <p-column field="subCategory" header="Sub Category" [sortable] ="true" [filter]="true"></p-column>
+        <p-column field="name" header="Name" [sortable] ="true" [filter]="true" filterMatchMode="contains"></p-column>
+        <p-column field="description" header="Description" [sortable] ="true" [filter]="true" filterMatchMode="contains"></p-column>
+        <p-column field="url" header="URL" [sortable] ="true" [filter]="true">
+                <ng-template  let-row="rowData" pTemplate type="body">
+                        <a href="{{row.url}}">{{row.url}}</a>
+                </ng-template>
+        </p-column>
+        <p-column field="eventDate" header="Event Date" [sortable] ="true" [filter]="true"></p-column>
    </p-dataTable>
 </div>

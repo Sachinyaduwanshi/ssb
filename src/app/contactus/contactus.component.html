@@ -1,4 +1,43 @@
+<div class="container contactus">
+
+<form [formGroup]="myForm"
+(ngFormSubmit)="registerUser(myForm.value)" novalidate>
 <div>
-        <h1>Contact US</h1>
-        <hr/>
+        <label for="name">
+                Full Name:
+                <input type="text" formControlName="name" placeholder="Enter Fullname" class="form-control">
+        </label>
+</div>
+<div class="form-group" [ngClass]="{'has-error':!myForm.controls['email'].valid}">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" placeholder="Enter Email" 
+        class="form-control">        
+        <p class="alert alert-danger" *ngIf="myForm.controls['email'].hasError('required') && myForm.controls['email'].dirty">
+        email is required
+        </p>
+</div>
+<div class="form-group" [ngClass]="{'has-error':!myForm.controls['phone'].valid}">
+        <label for="phone">Phone</label>
+        <input type="phone" formControlName="phone" placeholder="Enter Phone" 
+        class="form-control">
+        <p class="alert alert-danger" *ngIf="myForm.controls['phone'].hasError('minlength')">
+        Your phone must be at least 5 characters long.
+        </p>
+        <p class="alert alert-danger" *ngIf="myForm.controls['phone'].hasError('maxlength')">
+        Your phone cannot exceed 10 characters.
+        </p>
+        <p class="alert alert-danger" *ngIf="myForm.controls['phone'].hasError('required') && myForm.controls['phone'].dirty">
+        phone is required
+        </p>
+</div>
+<div>
+        <label for="comment">Comment:
+         <textarea  type="content" placeholder="Enter Comments"
+         class="form-control" formControlName="content"></textarea>
+        </label>
+</div>
+<div class="form-group text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="!myForm.valid">Submit</button>
+</div>
+</form>
 </div>

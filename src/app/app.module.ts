@@ -18,7 +18,7 @@ import { CalendarModule } from 'angular-calendar';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import {CalendarModule} from 'ap-angular2-fullcalendar';
 //import {CalendarComponent} from 'ap-angular2-fullcalendar';
-import {DataTableModule, SharedModule} from 'primeng/primeng';
+import {DataTableModule, SharedModule, DataGridModule, ScheduleModule, ListboxModule} from 'primeng/primeng';
 //import {Moment} from 'moment/moment';
 
 @NgModule({
@@ -42,6 +42,9 @@ import {DataTableModule, SharedModule} from 'primeng/primeng';
     NgbModule.forRoot(),
     DataTableModule,
     SharedModule,
+    DataGridModule,
+    ScheduleModule,
+    ListboxModule,
     BrowserAnimationsModule
     //ScheduleModule,
     //MomentModule

@@ -9,7 +9,8 @@ import { Component,
   moduleId: module.id,
   selector: 'my-calendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl: 'event-calendar.component.html'
+  templateUrl: 'event-calendar.component.html',
+  styleUrls:['event-calendar.component.css']
 })
 export class EventCalendarComponent {
 

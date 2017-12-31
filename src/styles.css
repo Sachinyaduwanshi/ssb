@@ -1,9 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #D9E0E7 !important;
+    background-color: whitesmoke;
     margin: 0px;
     font-size: 1em !important;
+    padding: 0;
+    border: none; 
   }
   
   .ui-panel-titlebar {

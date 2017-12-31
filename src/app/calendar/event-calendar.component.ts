@@ -14,13 +14,13 @@ import { Component,
 })
 export class EventCalendarComponent {
 
-  private headerConfig = {
+  public headerConfig = {
     left: 'prev,next today',
     center: 'title',
     right: 'month,agendaWeek,agendaDay'
   };
 
-  private pevents = [{
+  public pevents = [{
     title: 'Sai Bhajan',
     start: '2017-12-30 08:00:00',
     end: '2017-12-30 09:00:00'
